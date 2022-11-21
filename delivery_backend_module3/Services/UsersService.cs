@@ -50,7 +50,7 @@ public class UsersService : IUsersService
         return await LoginUser(loginCredentials);
     }
 
-    /*public async Task<TokenDto> LoginUser(LoginCredentials loginCredentials)
+    public async Task<TokenDto> LoginUser(LoginCredentials loginCredentials)
     {
         loginCredentials.email = NormalizeAttribute(loginCredentials.email);
 
@@ -75,7 +75,7 @@ public class UsersService : IUsersService
         };
 
         return result;
-    }*/
+    }
 
     
     

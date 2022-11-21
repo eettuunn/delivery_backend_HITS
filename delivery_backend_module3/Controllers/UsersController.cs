@@ -21,10 +21,10 @@ public class UsersController : ControllerBase
         return await _usersService.RegisterUser(userRegisterDto);
     }
     
-    /*[HttpPost]
+    [HttpPost]
     [Route("login")]
     public async Task<TokenDto> Login([FromBody] LoginCredentials loginCredentials)
     {
         return await _usersService.LoginUser(loginCredentials);
-    }*/
+    }
 }
