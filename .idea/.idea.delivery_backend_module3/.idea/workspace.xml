@@ -6,20 +6,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8af1c068-d878-4ee1-bb1f-a7a072b9d812" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63ee384769844530bc73c5391d8c6ee014270/26/82d2985e/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8322aa6874942e08bfeaa226363380c16c70/50/b49da343/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
