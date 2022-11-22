@@ -1,9 +1,11 @@
 using delivery_backend_module3.Configurations;
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Services;
+using delivery_backend_module3.Services.AuthorizationPolicy;
 using delivery_backend_module3.Services.ExceptionHandler;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -41,6 +43,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationRequirementHandler>();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(
+        "ValidateAuthorization",
+        policy => policy.Requirements.Add(new AuthorizationRequirement()));
+});
 
 //DB connection
 var connection = builder.Configuration.GetConnectionString("Postgres");
