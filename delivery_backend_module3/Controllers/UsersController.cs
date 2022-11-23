@@ -37,4 +37,13 @@ public class UsersController : ControllerBase
     {
         return await _usersService.LogoutUser(HttpContext);
     }
+
+    [HttpGet]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    [Route("profile")]
+    public async Task<UserDto> GetProfile()
+    {
+        return await _usersService.GetProfile(User.Identity.Name);
+    }
 }

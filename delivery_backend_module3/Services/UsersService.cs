@@ -6,6 +6,7 @@ using delivery_backend_module3.Exceptions;
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Entities;
+using delivery_backend_module3.Models.Enums;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -23,9 +24,10 @@ public class UsersService : IUsersService
     
     public async Task<TokenDto> RegisterUser(UserRegisterModel userRegisterDto)
     {
+        
         userRegisterDto.email = NormalizeAttribute(userRegisterDto.email);
 
-        await CheckUniqueEmail(userRegisterDto);
+        await CheckEmail(userRegisterDto);
 
         var userEntity = new UserEntity
         {
@@ -103,6 +105,31 @@ public class UsersService : IUsersService
 
         return response;
     }
+    
+    public async Task<UserDto> GetProfile(string email)
+    {
+        /*var jwt = GetToken(httpContext.Request.Headers);
+        var handler = new JwtSecurityTokenHandler();
+        var token = handler.ReadJwtToken(jwt);*/
+        
+        var userEntity = await _context
+            .Users
+            .Where(x => x.Email == email)
+            .FirstOrDefaultAsync();
+        //TODO: выводится цифра вместо гендера втф
+        var user = new UserDto()
+        {
+            id = userEntity.Id,
+            fullName = userEntity.FullName,
+            birthDate = userEntity.BirthDate,
+            gender = ConvertGender(userEntity),
+            address = userEntity.Address,
+            email = email,
+            phoneNumber = userEntity.PhoneNumber
+        };
+
+        return user;
+    }
 
 
     private static string GetToken(IHeaderDictionary headersDictionary)
@@ -135,8 +162,15 @@ public class UsersService : IUsersService
         return result;
     }
     
-    private async Task CheckUniqueEmail(UserRegisterModel userRegisterDto)
+    private async Task CheckEmail(UserRegisterModel userRegisterDto)
     {
+        var regex = new Regex(@"[a-zA-Z]+\w*@[a-zA-Z]+\.[a-zA-Z]+");
+        var matches = regex.Matches(userRegisterDto.email);
+        if (matches.Count <= 0)
+        {
+            throw new BadRequestException("Invalid email");
+        }
+        
         var checkUniqueEmail = await _context
             .Users
             .Where(x => userRegisterDto.email == x.Email)
@@ -162,7 +196,7 @@ public class UsersService : IUsersService
 
         var claims = new List<Claim>
         {
-            new Claim(ClaimsIdentity.DefaultNameClaimType, userEntity.Id.ToString())
+            new Claim(ClaimsIdentity.DefaultNameClaimType, userEntity.Email)
         };
 
         var claimsIdentity = new ClaimsIdentity
@@ -174,5 +208,15 @@ public class UsersService : IUsersService
         );
 
         return claimsIdentity;
+    }
+
+    private static Gender ConvertGender(UserEntity userRegisterModel)
+    {
+        if (userRegisterModel.Gender == 0)
+        {
+            return Gender.Male;
+        }
+
+        return Gender.Female;
     }
 }

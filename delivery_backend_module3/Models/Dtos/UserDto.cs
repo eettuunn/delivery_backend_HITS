@@ -5,7 +5,7 @@ namespace delivery_backend_module3.Models.Dtos;
 
 public class UserDto
 {
-    public Guid id { get; set; }
+    public Guid id { get; set; } 
     
     [Required]
     [MinLength(1)]

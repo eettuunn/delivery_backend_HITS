@@ -9,4 +9,6 @@ public interface IUsersService
     public Task<TokenDto> LoginUser(LoginCredentials loginCredentials);
     
     public Task<Response> LogoutUser(HttpContext httpContext);
+    
+    public Task<UserDto> GetProfile(string email);
 }
