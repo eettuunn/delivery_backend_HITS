@@ -7,4 +7,6 @@ public interface IUsersService
     public Task<TokenDto> RegisterUser(UserRegisterModel userRegisterDto);
     
     public Task<TokenDto> LoginUser(LoginCredentials loginCredentials);
+    
+    public Task<Response> LogoutUser(HttpContext httpContext);
 }

@@ -44,6 +44,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationRequirementHandler>();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy(

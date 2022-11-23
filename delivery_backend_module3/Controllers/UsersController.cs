@@ -1,6 +1,7 @@
 ﻿using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace delivery_backend_module3.Controllers;
@@ -23,8 +24,17 @@ public class UsersController : ControllerBase
     
     [HttpPost]
     [Route("login")]
-    public async Task<TokenDto> Login([FromBody] LoginCredentials loginCredentials)
+    public async Task<TokenDto> LoginUser([FromBody] LoginCredentials loginCredentials)
     {
         return await _usersService.LoginUser(loginCredentials);
+    }
+
+    [HttpPost]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    [Route("logout")]
+    public async Task<Response> LogoutUser()
+    {
+        return await _usersService.LogoutUser(HttpContext);
     }
 }

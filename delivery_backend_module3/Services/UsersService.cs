@@ -1,5 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using delivery_backend_module3.Configurations;
 using delivery_backend_module3.Exceptions;
 using delivery_backend_module3.Models;
@@ -77,7 +78,54 @@ public class UsersService : IUsersService
         return result;
     }
 
-    
+    public async Task<Response> LogoutUser(HttpContext httpContext)
+    {
+        var token = GetToken(httpContext.Request.Headers);
+        
+        var handler = new JwtSecurityTokenHandler();
+        var expiredDate = handler.ReadJwtToken(token).ValidTo;
+
+        var tokenEntity = new TokenEntity
+        {
+            Id = Guid.NewGuid(),
+            Token = token,
+            ExpiredDate = expiredDate
+        };
+
+        await _context.Tokens.AddAsync(tokenEntity);
+        await _context.SaveChangesAsync();
+
+        var response = new Response()
+        {
+            status = "OK",
+            message = "Logged out"
+        };
+
+        return response;
+    }
+
+
+    private static string GetToken(IHeaderDictionary headersDictionary)
+    {
+        var headers = new Dictionary<string, string>();
+
+        foreach (var header in headersDictionary)
+        {
+            headers.Add(header.Key, header.Value);
+        }
+
+        var authorizationHeader = headers["Authorization"];
+
+        var regex = new Regex(@"\S+\.\S+\.\S+");
+        var matches = regex.Matches(authorizationHeader);
+
+        if (matches.Count <= 0)
+        {
+            throw new BadRequestException("Invalid token in authorization header");
+        }
+
+        return matches[0].Value;
+    }
     
     private static string NormalizeAttribute(string attribute)
     {
