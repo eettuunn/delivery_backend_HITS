@@ -11,4 +11,6 @@ public interface IUsersService
     public Task<Response> LogoutUser(HttpContext httpContext);
     
     public Task<UserDto> GetProfile(string email);
+
+    public Task EditProfile(EditUserDto editedUserDto, string email);
 }

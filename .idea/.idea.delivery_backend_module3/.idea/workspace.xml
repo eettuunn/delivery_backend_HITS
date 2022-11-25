@@ -8,9 +8,22 @@
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/094bfdca-e073-4c63-b379-8d7b8243fe80.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/094bfdca-e073-4c63-b379-8d7b8243fe80/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/094bfdca-e073-4c63-b379-8d7b8243fe80/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/094bfdca-e073-4c63-b379-8d7b8243fe80/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/094bfdca-e073-4c63-b379-8d7b8243fe80/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c84c8f39-c912-48e5-ad2d-5d44d9015caa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c84c8f39-c912-48e5-ad2d-5d44d9015caa/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c84c8f39-c912-48e5-ad2d-5d44d9015caa/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c84c8f39-c912-48e5-ad2d-5d44d9015caa/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c84c8f39-c912-48e5-ad2d-5d44d9015caa/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserRegisterModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserRegisterModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/UserEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IUsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IUsersService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" afterDir="false" />
@@ -30,8 +43,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63ee384769844530bc73c5391d8c6ee014270/26/82d2985e/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8322aa6874942e08bfeaa226363380c16c70/50/b49da343/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Services/UsersService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

@@ -2,16 +2,23 @@
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="RD-222.4167.23">
     <data-source name="food_delivery_DB@localhost" uuid="0d34dbce-07c6-446c-b832-881888593dc8">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <database-info product="PostgreSQL" version="15.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="15.0" exact-driver-version="42.5">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="food_delivery_DB">
-            <node kind="schema" qname="public" />
+          <node kind="database">
+            <name qname="@" />
+            <name qname="test_db" />
+            <node kind="schema" qname="@" />
           </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="test_db@localhost" uuid="18e014dd-78ca-41fe-a029-e5e4d0ddbe98">
+    <data-source name="test_db@localhost" uuid="61000fd7-956d-4934-b344-b7b08f88ee15">
       <database-info product="PostgreSQL" version="15.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="15.0" exact-driver-version="42.5">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

@@ -46,4 +46,13 @@ public class UsersController : ControllerBase
     {
         return await _usersService.GetProfile(User.Identity.Name);
     }
+    
+    [HttpPut]
+    [Route("profile")]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task EditProfile([FromBody] EditUserDto editedUserDto)
+    {
+        await _usersService.EditProfile(editedUserDto, User.Identity.Name);
+    }
 }

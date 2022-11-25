@@ -15,18 +15,19 @@ public class UserEntity
     [MinLength(6)]
     public string Password { get; set; }
     
-    public DateTime? BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
     
+    [Required]
     public Gender Gender { get; set; }
     
-    public string? Address { get; set; }
+    public string Address { get; set; }
     
     [Required]
     [RegularExpression(@"[a-zA-Z]+\w*@[a-zA-Z]+\.[a-zA-Z]+")]
     public string Email { get; set; }
     
-    public string? PhoneNumber { get; set; }
-
+    public string PhoneNumber { get; set; }
+    
     public List<OrderEntity> Orders { get; set; } = new();
 
     public List<DishEntity> DishesInBasket { get; set; } = new();

@@ -6,7 +6,6 @@ using delivery_backend_module3.Exceptions;
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Entities;
-using delivery_backend_module3.Models.Enums;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -27,7 +26,7 @@ public class UsersService : IUsersService
         
         userRegisterDto.email = NormalizeAttribute(userRegisterDto.email);
 
-        await CheckEmail(userRegisterDto);
+        await CheckRegisterValidation(userRegisterDto);
 
         var userEntity = new UserEntity
         {
@@ -108,21 +107,17 @@ public class UsersService : IUsersService
     
     public async Task<UserDto> GetProfile(string email)
     {
-        /*var jwt = GetToken(httpContext.Request.Headers);
-        var handler = new JwtSecurityTokenHandler();
-        var token = handler.ReadJwtToken(jwt);*/
-        
         var userEntity = await _context
             .Users
             .Where(x => x.Email == email)
             .FirstOrDefaultAsync();
-        //TODO: выводится цифра вместо гендера втф
+        //TODO: выводится цифра вместо гендера втф да еще и можно 3 поставить ебана
         var user = new UserDto()
         {
             id = userEntity.Id,
             fullName = userEntity.FullName,
             birthDate = userEntity.BirthDate,
-            gender = ConvertGender(userEntity),
+            gender = userEntity.Gender,
             address = userEntity.Address,
             email = email,
             phoneNumber = userEntity.PhoneNumber
@@ -131,8 +126,26 @@ public class UsersService : IUsersService
         return user;
     }
 
+    public async Task EditProfile(EditUserDto editedUserDto, string email)
+    {
+        var userEntity = await _context
+            .Users
+            .Where(x => x.Email == email)
+            .FirstOrDefaultAsync();
+        
+        CheckPutValidation(editedUserDto);
+        
+        userEntity.Address = editedUserDto.address;
+        userEntity.FullName = editedUserDto.fullName;
+        userEntity.PhoneNumber = editedUserDto.phoneNumber;
+        userEntity.Gender = editedUserDto.gender;
+        userEntity.BirthDate = editedUserDto.birthDate;
 
-    private static string GetToken(IHeaderDictionary headersDictionary)
+        _context.Users.Update(userEntity);
+        await _context.SaveChangesAsync(); 
+    }
+
+        private static string GetToken(IHeaderDictionary headersDictionary)
     {
         var headers = new Dictionary<string, string>();
 
@@ -162,11 +175,11 @@ public class UsersService : IUsersService
         return result;
     }
     
-    private async Task CheckEmail(UserRegisterModel userRegisterDto)
+    private async Task CheckRegisterValidation(UserRegisterModel userRegisterDto)
     {
-        var regex = new Regex(@"[a-zA-Z]+\w*@[a-zA-Z]+\.[a-zA-Z]+");
-        var matches = regex.Matches(userRegisterDto.email);
-        if (matches.Count <= 0)
+        var emailRegex = new Regex(@"[a-zA-Z]+\w*@[a-zA-Z]+\.[a-zA-Z]+");
+        var emailMatches = emailRegex.Matches(userRegisterDto.email);
+        if (emailMatches.Count <= 0)
         {
             throw new BadRequestException("Invalid email");
         }
@@ -179,6 +192,43 @@ public class UsersService : IUsersService
         if (checkUniqueEmail != null)
         {
             throw new UserAlreadyExistException($"Email '{userRegisterDto.email}' is already taken");
+        }
+        
+        if (userRegisterDto.birthDate > DateTime.Now)
+        {
+            throw new BadRequestException("Birth date must be more then today's date");
+        }
+
+        if ((DateTime.Now - userRegisterDto.birthDate).TotalDays / 365 < 7 || (DateTime.Now - userRegisterDto.birthDate).TotalDays / 365 > 99)
+        {
+            throw new BadRequestException("Your age must be more then 6 and less then 100");
+        }
+        
+        var phoneRegex = new Regex(@"^(\+7|8)(( ?\(\d{3}\) ?\d{3}\-\d{2}\-\d{2})|(\d{10})|( \d{3} \d{3} \d{2} \d{2})|(\-\d{3}\-\d{3}\-\d{2}\-\d{2}))$");
+        var phoneMatches = phoneRegex.Matches(userRegisterDto.phoneNumber);
+        if (phoneMatches.Count <= 0)
+        {
+            throw new BadRequestException("Invalid phone number");
+        }
+    }
+
+    private static void CheckPutValidation(EditUserDto editedUserDto)
+    {
+        if (editedUserDto.birthDate > DateTime.Now)
+        {
+            throw new BadRequestException("Birth date must be more then today's date");
+        }
+
+        if ((DateTime.Now - editedUserDto.birthDate).TotalDays / 365 < 7 || (DateTime.Now - editedUserDto.birthDate).TotalDays / 365 > 99)
+        {
+            throw new BadRequestException("Your age must be more then 6 and less then 100");
+        }
+        
+        var phoneRegex = new Regex(@"^(\+7|8)(( ?\(\d{3}\) ?\d{3}\-\d{2}\-\d{2})|(\d{10})|( \d{3} \d{3} \d{2} \d{2})|(\-\d{3}\-\d{3}\-\d{2}\-\d{2}))$");
+        var matches = phoneRegex.Matches(editedUserDto.phoneNumber);
+        if (matches.Count <= 0)
+        {
+            throw new BadRequestException("Invalid phone number");
         }
     }
     
@@ -210,13 +260,4 @@ public class UsersService : IUsersService
         return claimsIdentity;
     }
 
-    private static Gender ConvertGender(UserEntity userRegisterModel)
-    {
-        if (userRegisterModel.Gender == 0)
-        {
-            return Gender.Male;
-        }
-
-        return Gender.Female;
-    }
 }
