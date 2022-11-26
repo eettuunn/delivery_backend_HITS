@@ -2,6 +2,7 @@
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Entities;
+using delivery_backend_module3.Models.Enums;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,8 +37,41 @@ public class DishService : IDishService
         };
         return dishDto;
     }
-    
-    
+
+    public async Task<bool> CheckAbilityToRating(Guid dishId, string email)
+    {
+        var userEntity = await _context
+            .Users
+            .Where(x => x.Email == email)
+            .FirstOrDefaultAsync();
+
+        var checkRating = await _context
+            .Ratings
+            .Where(x => x.dish.Id == dishId && x.user.Id == userEntity.Id)
+            .FirstOrDefaultAsync();
+
+        if (checkRating != null)
+        {
+            return false;
+        }
+
+        
+        var userOrders = await _context
+            .Orders
+            .Include(x => x.DishesInBasket)
+            .Where(x => x.User.Id == userEntity.Id && x.Status == OrderStatus.Delivered)
+            .ToListAsync();
+        
+        
+        if (!CheckDishInOrders(userOrders, dishId))
+        {
+            return false;
+        }
+        
+        return true;
+    }
+
+
     private async Task<double?> GetDishRating(DishEntity dish)
     {
         var ratings = await _context
@@ -61,5 +95,17 @@ public class DishService : IDishService
         
         return averageRating;
 
+    }
+
+    private bool CheckDishInOrders(List<OrderEntity> orders, Guid dishId)
+    {
+        foreach (var order in orders)
+        {
+            if (order.DishesInBasket.Exists(x => x.Dish.Id == dishId))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

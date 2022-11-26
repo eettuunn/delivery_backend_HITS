@@ -8,20 +8,16 @@
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/18e014dd-78ca-41fe-a029-e5e4d0ddbe98.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/18e014dd-78ca-41fe-a029-e5e4d0ddbe98/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/18e014dd-78ca-41fe-a029-e5e4d0ddbe98/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/18e014dd-78ca-41fe-a029-e5e4d0ddbe98/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/18e014dd-78ca-41fe-a029-e5e4d0ddbe98/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/1c5bf888-9094-4156-a6e4-6f5eb831ceee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/1c5bf888-9094-4156-a6e4-6f5eb831ceee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/61000fd7-956d-4934-b344-b7b08f88ee15/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/DishDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/DishDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/RatingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/RatingEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Enums/Gender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Enums/Gender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IDishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IDishService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Task_#15562/DishController" />
       </map>
     </option>
   </component>
@@ -139,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="GET запрос для получения информации о конкретном блюде" />
+    <option name="LAST_COMMIT_MESSAGE" value="GET запрос для получения информации о конкретном блюде" />
   </component>
 </project>

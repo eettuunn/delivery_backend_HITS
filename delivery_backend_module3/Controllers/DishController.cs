@@ -1,10 +1,11 @@
 ﻿using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace delivery_backend_module3.Controllers;
 
-[Route("api/account")]
+[Route("api/dish")]
 public class DishController : ControllerBase
 {
     private readonly IDishService _dishService;
@@ -15,9 +16,18 @@ public class DishController : ControllerBase
     }
 
     [HttpGet]
-    [Route("dish/{id}")]
+    [Route("{id}")]
     public async Task<DishDto> GetDishDetails(Guid id)
     {
         return await _dishService.GetDishesDetails(id);
+    }
+
+    [HttpGet]
+    [Route("{id}/rating/check")]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task<bool> CheckAbilityToRating(Guid id)
+    {
+        return await _dishService.CheckAbilityToRating(id, User.Identity.Name);
     }
 }
