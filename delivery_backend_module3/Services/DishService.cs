@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using delivery_backend_module3.Exceptions;
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Entities;
@@ -55,8 +56,8 @@ public class DishService : IDishService
             return false;
         }
 
-        
-        var userOrders = await _context
+        //TODO: вернуть когда сделаешь заказ
+        /*var userOrders = await _context
             .Orders
             .Include(x => x.DishesInBasket)
             .Where(x => x.User.Id == userEntity.Id && x.Status == OrderStatus.Delivered)
@@ -66,9 +67,38 @@ public class DishService : IDishService
         if (!CheckDishInOrders(userOrders, dishId))
         {
             return false;
-        }
+        }*/
         
         return true;
+    }
+
+    public async Task PostDishRating(Guid dishId, int rating, string email)
+    {
+        if (await CheckAbilityToRating(dishId, email))
+        {
+            var userEntity = await _context
+                .Users
+                .Where(x => x.Email == email)
+                .FirstOrDefaultAsync();
+            var dishEntity = await _context
+                .Dishes
+                .Where(x => x.Id == dishId)
+                .FirstOrDefaultAsync();
+            var ratingEntity = new RatingEntity
+            {
+                Id = new Guid(),
+                dish = dishEntity,
+                user = userEntity,
+                rating = rating
+            };
+
+            await _context.Ratings.AddAsync(ratingEntity);
+            await _context.SaveChangesAsync();
+        }
+        else
+        {
+            throw new BadRequestException("Cant rating");
+        }
     }
 
 

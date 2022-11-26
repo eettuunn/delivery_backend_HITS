@@ -30,4 +30,13 @@ public class DishController : ControllerBase
     {
         return await _dishService.CheckAbilityToRating(id, User.Identity.Name);
     }
+
+    [HttpPost]
+    [Route("{id}/rating")]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task PostDishReview(Guid id, int rating)
+    {
+        await _dishService.PostDishRating(id, rating, User.Identity.Name);
+    }
 }

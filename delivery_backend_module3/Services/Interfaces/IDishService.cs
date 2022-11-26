@@ -7,4 +7,6 @@ public interface IDishService
     Task<DishDto> GetDishesDetails(Guid id);
 
     Task<bool> CheckAbilityToRating(Guid id, string email);
+
+    Task PostDishRating(Guid id, int rating, string email);
 }
