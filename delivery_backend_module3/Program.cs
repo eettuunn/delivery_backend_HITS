@@ -43,6 +43,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationRequirementHandler>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization(options =>

@@ -10,7 +10,7 @@ namespace delivery_backend_module3.Controllers;
 public class UsersController : ControllerBase
 {
     private readonly IUsersService _usersService;
-    public UsersController(IUsersService usersService, ApplicationDbContext context)
+    public UsersController(IUsersService usersService)
     {
         _usersService = usersService;
     }

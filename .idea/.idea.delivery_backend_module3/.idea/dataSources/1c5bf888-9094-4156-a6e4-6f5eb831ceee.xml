@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>791</IntrospectionStateNumber>
+      <IntrospectionStateNumber>822</IntrospectionStateNumber>
       <ServerVersion>15.0</ServerVersion>
       <StartupTime>1668081918</StartupTime>
       <TimeZones>true ACDT
@@ -812,7 +812,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>791</IntrospectionStateNumber>
+      <IntrospectionStateNumber>822</IntrospectionStateNumber>
       <ObjectId>16518</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4221,7 +4221,7 @@ false Zulu
     <schema id="264" parent="5" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>791</IntrospectionStateNumber>
+      <IntrospectionStateNumber>822</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4354,8 +4354,10 @@ WillingUsersId</ColNames>
     </column>
     <column id="283" parent="266" name="Description">
       <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="284" parent="266" name="Vegetarian">
@@ -4367,8 +4369,10 @@ WillingUsersId</ColNames>
     </column>
     <column id="285" parent="266" name="Image">
       <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="286" parent="266" name="Category">
@@ -4675,8 +4679,10 @@ WillingUsersId</ColNames>
     </column>
     <column id="327" parent="271" name="BirthDate">
       <DataType>timestamp with time zone|0s</DataType>
+      <DefaultExpression>&apos;-infinity&apos;::timestamp with time zone</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>1184</TypeId>
     </column>
     <column id="328" parent="271" name="Gender">
@@ -4688,20 +4694,26 @@ WillingUsersId</ColNames>
     </column>
     <column id="329" parent="271" name="Address">
       <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="330" parent="271" name="Email">
       <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="331" parent="271" name="PhoneNumber">
       <DataType>text|0s</DataType>
+      <DefaultExpression>&apos;&apos;::text</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>767</StateNumber>
+      <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="332" parent="271" name="Password">

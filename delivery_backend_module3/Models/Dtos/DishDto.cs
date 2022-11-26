@@ -23,5 +23,5 @@ public class DishDto
     
     public double? rating { get; set; }
     
-    public DishCategory category { get; set; }
+    public string category { get; set; }
 }

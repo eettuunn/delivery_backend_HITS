@@ -111,13 +111,13 @@ public class UsersService : IUsersService
             .Users
             .Where(x => x.Email == email)
             .FirstOrDefaultAsync();
-        //TODO: выводится цифра вместо гендера втф да еще и можно 3 поставить ебана
+        
         var user = new UserDto()
         {
             id = userEntity.Id,
             fullName = userEntity.FullName,
             birthDate = userEntity.BirthDate,
-            gender = userEntity.Gender,
+            gender = userEntity.Gender.ToString(),
             address = userEntity.Address,
             email = email,
             phoneNumber = userEntity.PhoneNumber
