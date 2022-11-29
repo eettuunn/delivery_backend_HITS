@@ -16,10 +16,16 @@ public class DishController : ControllerBase
     }
 
     [HttpGet]
+    public async Task<DishPagedListDto> GetDishesList()
+    {
+        return await _dishService.GetDishesList(HttpContext);
+    }
+
+    [HttpGet]
     [Route("{id}")]
     public async Task<DishDto> GetDishDetails(Guid id)
     {
-        return await _dishService.GetDishesDetails(id);
+        return await _dishService.GetDishDetails(id);
     }
 
     [HttpGet]

@@ -4,9 +4,11 @@ namespace delivery_backend_module3.Services.Interfaces;
 
 public interface IDishService
 {
-    Task<DishDto> GetDishesDetails(Guid id);
+    Task<DishDto> GetDishDetails(Guid id);
 
     Task<bool> CheckAbilityToRating(Guid id, string email);
 
     Task PostDishRating(Guid id, int rating, string email);
+
+    Task<DishPagedListDto> GetDishesList(HttpContext httpContext);
 }

@@ -6,6 +6,6 @@ public enum DishSorting
     NameDesc,
     PriceAsc,
     PriceDesc,
-    RatingAsk,
+    RatingAsc,
     RatingDesc
 }
