@@ -44,6 +44,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IDishService, DishService>();
+builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationRequirementHandler>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization(options =>
@@ -66,7 +67,7 @@ app.UseAuthorization();
 //DB init and update
 using var serviceScope = app.Services.CreateScope();
 var dbContext = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
-dbContext?.Database.Migrate();
+//dbContext?.Database.Migrate();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

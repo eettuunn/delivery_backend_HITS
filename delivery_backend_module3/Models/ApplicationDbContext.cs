@@ -18,6 +18,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<UserEntity> Users { get; set; }
     
     public DbSet<TokenEntity> Tokens { get; set; }
+    
+    public DbSet<BasketEntity> Basket { get; set; }
 
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
