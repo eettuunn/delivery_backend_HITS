@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using delivery_backend_module3.Configurations;
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Services;
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -67,7 +70,7 @@ app.UseAuthorization();
 //DB init and update
 using var serviceScope = app.Services.CreateScope();
 var dbContext = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
-//dbContext?.Database.Migrate();
+dbContext?.Database.Migrate();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

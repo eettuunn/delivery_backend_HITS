@@ -5,17 +5,34 @@
     <projectFile profileName="delivery_backend_module3">delivery_backend_module3/delivery_backend_module3.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
+    <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="BasketEntity">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/edc7bd37-fd27-4cda-a203-36171a35e6a8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/edc7bd37-fd27-4cda-a203-36171a35e6a8/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/edc7bd37-fd27-4cda-a203-36171a35e6a8/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/edc7bd37-fd27-4cda-a203-36171a35e6a8/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/edc7bd37-fd27-4cda-a203-36171a35e6a8/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221120143005_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221120143005_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221121132151_addPasswordToUserEntity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221121132151_addPasswordToUserEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221123134820_cangeEmailValidation.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221123134820_cangeEmailValidation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125114847_nullsEditted.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125114847_nullsEditted.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125120349_nulls.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125120349_nulls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151646_basketEntity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151646_basketEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151836_basket.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151836_basket.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151939_basketTEst.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151939_basketTEst.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/BasketEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/BasketEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IBasketService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IBasketService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669465233057</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="BasketEntity">
+      <created>1669735686959</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669735686959</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +193,7 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="GET запрос для получения информации о конкретном блюде" />
     <MESSAGE value="POST поставить оценку блюду" />
-    <option name="LAST_COMMIT_MESSAGE" value="POST поставить оценку блюду" />
+    <MESSAGE value="BasketEntity" />
+    <option name="LAST_COMMIT_MESSAGE" value="BasketEntity" />
   </component>
 </project>

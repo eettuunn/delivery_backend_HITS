@@ -10,5 +10,5 @@ public class BasketEntity
     public List<DishBasketEntity> DishesInBasket { get; set; } = new();
 
     [Required] 
-    public string Name = "basket";
+    public UserEntity User { get; set; }
 }

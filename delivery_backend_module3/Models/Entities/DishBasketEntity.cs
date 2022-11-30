@@ -6,8 +6,11 @@ public class DishBasketEntity
 {
     public Guid Id { get; set; }
     
+    /*[Required]
+    public OrderEntity Order { get; set; }*/
+    
     [Required]
-    public OrderEntity Order { get; set; }
+    public UserEntity User { get; set; }
     
     [Required]
     public DishEntity Dish { get; set; }

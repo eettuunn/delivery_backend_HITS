@@ -141,7 +141,7 @@ public class UsersService : IUsersService
         userEntity.Gender = editedUserDto.gender;
         userEntity.BirthDate = editedUserDto.birthDate;
 
-        _context.Users.Update(userEntity);
+        
         await _context.SaveChangesAsync(); 
     }
 
@@ -214,12 +214,12 @@ public class UsersService : IUsersService
 
     private static void CheckPutValidation(EditUserDto editedUserDto)
     {
-        if (editedUserDto.birthDate > DateTime.Now)
+        if (editedUserDto.birthDate > DateTime.UtcNow)
         {
             throw new BadRequestException("Birth date must be more then today's date");
         }
 
-        if ((DateTime.Now - editedUserDto.birthDate).TotalDays / 365 < 7 || (DateTime.Now - editedUserDto.birthDate).TotalDays / 365 > 99)
+        if ((DateTime.UtcNow - editedUserDto.birthDate).TotalDays / 365 < 7 || (DateTime.UtcNow - editedUserDto.birthDate).TotalDays / 365 > 99)
         {
             throw new BadRequestException("Your age must be more then 6 and less then 100");
         }
