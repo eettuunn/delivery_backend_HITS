@@ -35,7 +35,7 @@ public class BasketService : IBasketService
         {
             dishBasketEntity = new DishBasketEntity
             {
-                Id = new Guid(),
+                Id = dishId,
                 Dish = dish,
                 User = user,
                 Amount = 1
@@ -76,5 +76,42 @@ public class BasketService : IBasketService
         }
 
         return dishBasketDtos;
+    }
+
+    public async Task DeleteDishFromBasket(Guid dishId, bool? increase, HttpContext httpContext)
+    {
+        CheckQuery(httpContext);
+        
+        DishBasketEntity dishBasketEntity = await _context
+            .DishesInBasket
+            .Where(x => x.Dish.Id == dishId)
+            .FirstOrDefaultAsync() ?? throw new NotFoundException("Cant find dish with this id in basket");
+
+        if (increase == true)
+        {
+            dishBasketEntity.Amount--;
+        }
+        else
+        {
+            _context.DishesInBasket.Remove(dishBasketEntity);
+        }
+
+        await _context.SaveChangesAsync();
+    }
+
+    private void CheckQuery(HttpContext httpContext)
+    {
+        var query = httpContext.Request.Query;
+        foreach (var param in query)
+        {
+            if (param.Key != "increase")
+            {
+                throw new BadRequestException($"Cant identify parameter {param.Key}");
+            }
+            if (param.Value != "true" && param.Value != "false")
+            {
+                throw new BadRequestException("Value of Key increase in query is invalid");
+            }
+        }
     }
 }

@@ -31,4 +31,13 @@ public class BasketController : ControllerBase
     {
         await _basketService.AddDishToBasket(dishId, User.Identity.Name);
     }
+
+    [HttpDelete]
+    [Route("dish/{dishId}")]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task DeleteDishFromBasket(Guid dishId, bool? increase = null)
+    {
+        await _basketService.DeleteDishFromBasket(dishId, increase, HttpContext);
+    }
 }
