@@ -50,7 +50,7 @@ public class BasketService : IBasketService
         await _context.SaveChangesAsync();
     }
 
-    /*public async Task<List<DishBasketDto>> GetUsersBasket(string email)
+    public async Task<List<DishBasketDto>> GetUsersBasket(string email)
     {
         var dishes = await _context
             .DishesInBasket
@@ -76,5 +76,5 @@ public class BasketService : IBasketService
         }
 
         return dishBasketDtos;
-    }*/
+    }
 }

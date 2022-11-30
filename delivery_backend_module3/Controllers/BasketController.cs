@@ -14,6 +14,14 @@ public class BasketController : ControllerBase
     {
         _basketService = basketService;
     }
+    
+    [HttpGet]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task<List<DishBasketDto>> GetUsersBasket()
+    {
+        return await _basketService.GetUsersBasket(User.Identity.Name);
+    }
 
     [HttpPost]
     [Route("dish/{dishId}")]
@@ -23,12 +31,4 @@ public class BasketController : ControllerBase
     {
         await _basketService.AddDishToBasket(dishId, User.Identity.Name);
     }
-
-    /*[HttpGet]
-    [Authorize]
-    [Authorize(Policy = "ValidateAuthorization")]
-    public async Task<List<DishBasketDto>> GetUsersBasket()
-    {
-        return await _basketService.GetUsersBasket(User.Identity.Name);
-    }*/
 }

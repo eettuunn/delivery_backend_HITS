@@ -7,32 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="BasketEntity">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0c17afba-69d2-4654-8def-e8c951c54759.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0c17afba-69d2-4654-8def-e8c951c54759.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5620ab1b-6364-48d2-a8db-87e4f59c5344/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221120143005_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221120143005_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221121132151_addPasswordToUserEntity.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221121132151_addPasswordToUserEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221123134820_cangeEmailValidation.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221123134820_cangeEmailValidation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125114847_nullsEditted.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125114847_nullsEditted.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125120349_nulls.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221125120349_nulls.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151646_basketEntity.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151646_basketEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151836_basket.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151836_basket.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151939_basketTEst.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/20221129151939_basketTEst.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/BasketEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/BasketEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IBasketService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IBasketService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -4236,5 +4236,24 @@ false Zulu
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
+    <schema id="265" parent="5" name="information_schema">
+      <ObjectId>13183</ObjectId>
+      <StateNumber>524</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="266" parent="5" name="pg_catalog">
+      <Comment>system catalog schema</Comment>
+      <ObjectId>11</ObjectId>
+      <StateNumber>518</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="267" parent="5" name="public">
+      <Comment>standard public schema</Comment>
+      <Current>1</Current>
+      <IntrospectionStateNumber>771</IntrospectionStateNumber>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>518</StateNumber>
+      <OwnerName>pg_database_owner</OwnerName>
+    </schema>
   </database-model>
 </dataSource>

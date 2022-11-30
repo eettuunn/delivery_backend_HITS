@@ -7,5 +7,5 @@ public interface IBasketService
 {
     Task AddDishToBasket(Guid id, string email);
 
-    //Task<List<DishBasketDto>> GetUsersBasket(string email);
+    Task<List<DishBasketDto>> GetUsersBasket(string email);
 }
