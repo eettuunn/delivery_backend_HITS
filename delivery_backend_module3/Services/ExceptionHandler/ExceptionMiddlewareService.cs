@@ -17,6 +17,11 @@ public class ExceptionMiddlewareService
         {
             await _next(context);
         }
+        catch (ConflictException exception)
+        {
+            context.Response.StatusCode = StatusCodes.Status409Conflict;
+            await context.Response.WriteAsJsonAsync(new { message = exception.Message });
+        }
         catch (UserAlreadyExistException exception)
         {
             context.Response.StatusCode = StatusCodes.Status409Conflict;
