@@ -21,4 +21,13 @@ public class OrderController : ControllerBase
     {
         await _orderService.CreateOrder(orderCreateDto, User.Identity.Name);
     }
+    
+    [HttpPost]
+    [Authorize]
+    [Route("{id}/status")]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task PostConfirmDelivery(Guid id)
+    {
+        await _orderService.ConfirmDelivery(id, User.Identity.Name);
+    }
 }

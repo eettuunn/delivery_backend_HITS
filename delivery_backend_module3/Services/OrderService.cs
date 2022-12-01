@@ -61,4 +61,26 @@ public class OrderService : IOrderService
         await _context.AddAsync(orderEntity);
         await _context.SaveChangesAsync();
     }
+
+    public async Task ConfirmDelivery(Guid orderId, string email)
+    {
+        var orderEntity = await _context
+            .Orders
+            .Include(x => x.User)
+            .Where(x => x.Id == orderId)
+            .FirstOrDefaultAsync() ?? throw new NotFoundException("Cant find order with this ID");
+
+        if (orderEntity.User.Email != email)
+        {
+            throw new ForbiddenException("You cannot confirm not your order");
+        }
+
+        if (orderEntity.Status == OrderStatus.Delivered)
+        {
+            throw new ConflictException("This order already has status 'delivered'");
+        }
+
+        orderEntity.Status = OrderStatus.Delivered;
+        await _context.SaveChangesAsync();
+    }
 }

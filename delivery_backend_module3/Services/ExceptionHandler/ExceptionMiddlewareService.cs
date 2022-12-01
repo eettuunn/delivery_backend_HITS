@@ -22,6 +22,11 @@ public class ExceptionMiddlewareService
             context.Response.StatusCode = StatusCodes.Status409Conflict;
             await context.Response.WriteAsJsonAsync(new { message = exception.Message });
         }
+        catch (ForbiddenException exception)
+        {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsJsonAsync(new { message = exception.Message });
+        }
         catch (UserAlreadyExistException exception)
         {
             context.Response.StatusCode = StatusCodes.Status409Conflict;
