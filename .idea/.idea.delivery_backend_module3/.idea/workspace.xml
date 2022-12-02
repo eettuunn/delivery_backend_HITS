@@ -8,23 +8,22 @@
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="BasketEntity">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8/storage_v2/_src_/database/food_delivery_DB.SCoIkw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8/storage_v2/_src_/database/food_delivery_DB.SCoIkw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/8de80c7d-882d-4acb-94d4-7f5775050886.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/8de80c7d-882d-4acb-94d4-7f5775050886/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/8de80c7d-882d-4acb-94d4-7f5775050886/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/8de80c7d-882d-4acb-94d4-7f5775050886/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/8de80c7d-882d-4acb-94d4-7f5775050886/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/6bd34db9-f4a3-467c-92be-9e5111f94275.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/6bd34db9-f4a3-467c-92be-9e5111f94275/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/6bd34db9-f4a3-467c-92be-9e5111f94275/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/6bd34db9-f4a3-467c-92be-9e5111f94275/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9813d7f1-0eb3-460e-9caa-cd1cc9e06269/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/b9c6276e-8955-4f00-8935-cb02da95a341.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/b9c6276e-8955-4f00-8935-cb02da95a341/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/b9c6276e-8955-4f00-8935-cb02da95a341/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/b9c6276e-8955-4f00-8935-cb02da95a341/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/b9c6276e-8955-4f00-8935-cb02da95a341/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/OrderDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/OrderDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/DishBasketEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/OrderEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/OrderEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/BasketService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IOrderService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/OrderService.cs" afterDir="false" />
     </list>
@@ -152,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669899593330</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="GET информация о конкретном заказе">
+      <created>1669971343480</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669971343481</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +210,7 @@
     <MESSAGE value="BasketEntity" />
     <MESSAGE value="GET корзина пользователя" />
     <MESSAGE value="POST создание заказа" />
-    <option name="LAST_COMMIT_MESSAGE" value="POST создание заказа" />
+    <MESSAGE value="GET информация о конкретном заказе" />
+    <option name="LAST_COMMIT_MESSAGE" value="GET информация о конкретном заказе" />
   </component>
 </project>

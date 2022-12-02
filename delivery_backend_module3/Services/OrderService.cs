@@ -132,4 +132,30 @@ public class OrderService : IOrderService
 
         return orderDto;
     }
+
+    public async Task<List<OrderInfoDto>> GetOrderList(string email)
+    {
+        var orderEntities = await _context
+            .Orders
+            .Include(order => order.User)
+            .Where(order => order.User.Email == email)
+            .ToListAsync();
+
+        List<OrderInfoDto> orderInfoDtos = new();
+
+        foreach (var orderEntity in orderEntities)
+        {
+            OrderInfoDto orderInfoDto = new OrderInfoDto()
+            {
+                id = orderEntity.Id,
+                deliveryTime = orderEntity.DeliveryTime,
+                orderTime = orderEntity.OrderTime,
+                status = orderEntity.Status,
+                price = orderEntity.Price
+            };
+            orderInfoDtos.Add(orderInfoDto);
+        }
+
+        return orderInfoDtos;
+    }
 }

@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1049</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1067</IntrospectionStateNumber>
       <ServerVersion>15.0</ServerVersion>
       <StartupTime>1668081918</StartupTime>
       <TimeZones>true ACDT
@@ -812,7 +812,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1049</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1067</IntrospectionStateNumber>
       <ObjectId>16518</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4221,7 +4221,7 @@ false Zulu
     <schema id="264" parent="5" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1049</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1067</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4246,7 +4246,7 @@ false Zulu
     </table>
     <table id="268" parent="264" name="DishesInBasket">
       <ObjectId>16587</ObjectId>
-      <StateNumber>942</StateNumber>
+      <StateNumber>1052</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4482,7 +4482,21 @@ WillingUsersId</ColNames>
       <StateNumber>942</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <foreign-key id="301" parent="268" name="FK_DishesInBasket_Users_UserId">
+    <column id="301" parent="268" name="DishStatus">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>1052</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="302" parent="268" name="OrderEntityId">
+      <DataType>uuid|0s</DataType>
+      <Position>8</Position>
+      <StateNumber>1052</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <foreign-key id="303" parent="268" name="FK_DishesInBasket_Users_UserId">
       <ColNames>UserId</ColNames>
       <ObjectId>16738</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -4493,7 +4507,7 @@ WillingUsersId</ColNames>
       <RefTableName>Users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="302" parent="268" name="FK_DishesInBasket_Dishes_DishId">
+    <foreign-key id="304" parent="268" name="FK_DishesInBasket_Dishes_DishId">
       <ColNames>DishId</ColNames>
       <ObjectId>16592</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -4504,7 +4518,7 @@ WillingUsersId</ColNames>
       <RefTableName>Dishes</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="303" parent="268" name="FK_DishesInBasket_Basket_BasketEntityId">
+    <foreign-key id="305" parent="268" name="FK_DishesInBasket_Basket_BasketEntityId">
       <ColNames>BasketEntityId</ColNames>
       <ObjectId>16733</ObjectId>
       <RefColNames>Id</RefColNames>
@@ -4514,7 +4528,17 @@ WillingUsersId</ColNames>
       <RefTableName>Basket</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="304" parent="268" name="PK_DishesInBasket">
+    <foreign-key id="306" parent="268" name="FK_DishesInBasket_Orders_OrderEntityId">
+      <ColNames>OrderEntityId</ColNames>
+      <ObjectId>16758</ObjectId>
+      <RefColNames>Id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1052</StateNumber>
+      <RefTableId>16560</RefTableId>
+      <RefTableName>Orders</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="307" parent="268" name="PK_DishesInBasket">
       <ColNames>Id</ColNames>
       <ObjectId>16590</ObjectId>
       <Primary>1</Primary>
@@ -4522,80 +4546,86 @@ WillingUsersId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="305" parent="268" name="IX_DishesInBasket_UserId">
+    <index id="308" parent="268" name="IX_DishesInBasket_UserId">
       <ColNames>UserId</ColNames>
       <ObjectId>16604</ObjectId>
       <StateNumber>942</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="306" parent="268" name="IX_DishesInBasket_DishId">
+    <index id="309" parent="268" name="IX_DishesInBasket_DishId">
       <ColNames>DishId</ColNames>
       <ObjectId>16603</ObjectId>
       <StateNumber>767</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="307" parent="268" name="IX_DishesInBasket_BasketEntityId">
+    <index id="310" parent="268" name="IX_DishesInBasket_BasketEntityId">
       <ColNames>BasketEntityId</ColNames>
       <ObjectId>16732</ObjectId>
       <StateNumber>942</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="308" parent="268" name="PK_DishesInBasket">
+    <index id="311" parent="268" name="IX_DishesInBasket_OrderEntityId">
+      <ColNames>OrderEntityId</ColNames>
+      <ObjectId>16757</ObjectId>
+      <StateNumber>1052</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="312" parent="268" name="PK_DishesInBasket">
       <ObjectId>16591</ObjectId>
       <Primary>1</Primary>
       <StateNumber>767</StateNumber>
       <UnderlyingIndexId>16590</UnderlyingIndexId>
     </key>
-    <column id="309" parent="269" name="Id">
+    <column id="313" parent="269" name="Id">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="310" parent="269" name="DeliveryTime">
+    <column id="314" parent="269" name="DeliveryTime">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>767</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="311" parent="269" name="OrderTime">
+    <column id="315" parent="269" name="OrderTime">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>767</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="312" parent="269" name="Price">
+    <column id="316" parent="269" name="Price">
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>767</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="313" parent="269" name="Address">
+    <column id="317" parent="269" name="Address">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>767</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="314" parent="269" name="Status">
+    <column id="318" parent="269" name="Status">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>767</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="315" parent="269" name="UserId">
+    <column id="319" parent="269" name="UserId">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <foreign-key id="316" parent="269" name="FK_Orders_Users_UserId">
+    <foreign-key id="320" parent="269" name="FK_Orders_Users_UserId">
       <ColNames>UserId</ColNames>
       <ObjectId>16567</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -4606,7 +4636,7 @@ WillingUsersId</ColNames>
       <RefTableName>Users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="317" parent="269" name="PK_Orders">
+    <index id="321" parent="269" name="PK_Orders">
       <ColNames>Id</ColNames>
       <ObjectId>16565</ObjectId>
       <Primary>1</Primary>
@@ -4614,47 +4644,47 @@ WillingUsersId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="318" parent="269" name="IX_Orders_UserId">
+    <index id="322" parent="269" name="IX_Orders_UserId">
       <ColNames>UserId</ColNames>
       <ObjectId>16605</ObjectId>
       <StateNumber>767</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="319" parent="269" name="PK_Orders">
+    <key id="323" parent="269" name="PK_Orders">
       <ObjectId>16566</ObjectId>
       <Primary>1</Primary>
       <StateNumber>767</StateNumber>
       <UnderlyingIndexId>16565</UnderlyingIndexId>
     </key>
-    <column id="320" parent="270" name="Id">
+    <column id="324" parent="270" name="Id">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="321" parent="270" name="rating">
+    <column id="325" parent="270" name="rating">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>767</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="322" parent="270" name="userId">
+    <column id="326" parent="270" name="userId">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="323" parent="270" name="dishId">
+    <column id="327" parent="270" name="dishId">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <foreign-key id="324" parent="270" name="FK_Ratings_Users_userId">
+    <foreign-key id="328" parent="270" name="FK_Ratings_Users_userId">
       <ColNames>userId</ColNames>
       <ObjectId>16582</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -4665,7 +4695,7 @@ WillingUsersId</ColNames>
       <RefTableName>Users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="325" parent="270" name="FK_Ratings_Dishes_dishId">
+    <foreign-key id="329" parent="270" name="FK_Ratings_Dishes_dishId">
       <ColNames>dishId</ColNames>
       <ObjectId>16577</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -4676,7 +4706,7 @@ WillingUsersId</ColNames>
       <RefTableName>Dishes</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="326" parent="270" name="PK_Ratings">
+    <index id="330" parent="270" name="PK_Ratings">
       <ColNames>Id</ColNames>
       <ObjectId>16575</ObjectId>
       <Primary>1</Primary>
@@ -4684,46 +4714,46 @@ WillingUsersId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="327" parent="270" name="IX_Ratings_userId">
+    <index id="331" parent="270" name="IX_Ratings_userId">
       <ColNames>userId</ColNames>
       <ObjectId>16607</ObjectId>
       <StateNumber>767</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="328" parent="270" name="IX_Ratings_dishId">
+    <index id="332" parent="270" name="IX_Ratings_dishId">
       <ColNames>dishId</ColNames>
       <ObjectId>16606</ObjectId>
       <StateNumber>767</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="329" parent="270" name="PK_Ratings">
+    <key id="333" parent="270" name="PK_Ratings">
       <ObjectId>16576</ObjectId>
       <Primary>1</Primary>
       <StateNumber>767</StateNumber>
       <UnderlyingIndexId>16575</UnderlyingIndexId>
     </key>
-    <column id="330" parent="271" name="Id">
+    <column id="334" parent="271" name="Id">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="331" parent="271" name="Token">
+    <column id="335" parent="271" name="Token">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>767</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="332" parent="271" name="ExpiredDate">
+    <column id="336" parent="271" name="ExpiredDate">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>767</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="333" parent="271" name="PK_Tokens">
+    <index id="337" parent="271" name="PK_Tokens">
       <ColNames>Id</ColNames>
       <ObjectId>16536</ObjectId>
       <Primary>1</Primary>
@@ -4731,27 +4761,27 @@ WillingUsersId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="334" parent="271" name="PK_Tokens">
+    <key id="338" parent="271" name="PK_Tokens">
       <ObjectId>16537</ObjectId>
       <Primary>1</Primary>
       <StateNumber>767</StateNumber>
       <UnderlyingIndexId>16536</UnderlyingIndexId>
     </key>
-    <column id="335" parent="272" name="Id">
+    <column id="339" parent="272" name="Id">
       <DataType>uuid|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>767</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="336" parent="272" name="FullName">
+    <column id="340" parent="272" name="FullName">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>767</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="337" parent="272" name="BirthDate">
+    <column id="341" parent="272" name="BirthDate">
       <DataType>timestamp with time zone|0s</DataType>
       <DefaultExpression>&apos;-infinity&apos;::timestamp with time zone</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4759,14 +4789,14 @@ WillingUsersId</ColNames>
       <StateNumber>803</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="338" parent="272" name="Gender">
+    <column id="342" parent="272" name="Gender">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>767</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="339" parent="272" name="Address">
+    <column id="343" parent="272" name="Address">
       <DataType>text|0s</DataType>
       <DefaultExpression>&apos;&apos;::text</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4774,7 +4804,7 @@ WillingUsersId</ColNames>
       <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="340" parent="272" name="Email">
+    <column id="344" parent="272" name="Email">
       <DataType>text|0s</DataType>
       <DefaultExpression>&apos;&apos;::text</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4782,7 +4812,7 @@ WillingUsersId</ColNames>
       <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="341" parent="272" name="PhoneNumber">
+    <column id="345" parent="272" name="PhoneNumber">
       <DataType>text|0s</DataType>
       <DefaultExpression>&apos;&apos;::text</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4790,7 +4820,7 @@ WillingUsersId</ColNames>
       <StateNumber>803</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="342" parent="272" name="Password">
+    <column id="346" parent="272" name="Password">
       <DataType>text|0s</DataType>
       <DefaultExpression>&apos;&apos;::text</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4798,7 +4828,7 @@ WillingUsersId</ColNames>
       <StateNumber>776</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="343" parent="272" name="PK_Users">
+    <index id="347" parent="272" name="PK_Users">
       <ColNames>Id</ColNames>
       <ObjectId>16543</ObjectId>
       <Primary>1</Primary>
@@ -4806,27 +4836,27 @@ WillingUsersId</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="344" parent="272" name="PK_Users">
+    <key id="348" parent="272" name="PK_Users">
       <ObjectId>16544</ObjectId>
       <Primary>1</Primary>
       <StateNumber>767</StateNumber>
       <UnderlyingIndexId>16543</UnderlyingIndexId>
     </key>
-    <column id="345" parent="273" name="MigrationId">
+    <column id="349" parent="273" name="MigrationId">
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>766</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="346" parent="273" name="ProductVersion">
+    <column id="350" parent="273" name="ProductVersion">
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>766</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="347" parent="273" name="PK___EFMigrationsHistory">
+    <index id="351" parent="273" name="PK___EFMigrationsHistory">
       <ColNames>MigrationId</ColNames>
       <ObjectId>16522</ObjectId>
       <Primary>1</Primary>
@@ -4837,7 +4867,7 @@ WillingUsersId</ColNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="348" parent="273" name="PK___EFMigrationsHistory">
+    <key id="352" parent="273" name="PK___EFMigrationsHistory">
       <ObjectId>16523</ObjectId>
       <Primary>1</Primary>
       <StateNumber>766</StateNumber>

@@ -9,4 +9,6 @@ public interface IOrderService
     public Task ConfirmDelivery(Guid orderId, string email);
 
     public Task<OrderDto> GetOrderInfo(Guid id, string email);
+
+    public Task<List<OrderInfoDto>> GetOrderList(string email);
 }
