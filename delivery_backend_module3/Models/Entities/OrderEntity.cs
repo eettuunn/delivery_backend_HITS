@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Enums;
 
 namespace delivery_backend_module3.Models.Entities;
@@ -27,5 +28,5 @@ public class OrderEntity
     public UserEntity User { get; set; }
 
     [Required]
-    public List<DishBasketEntity> DishesInBasket { get; set; } = new();
+    public List<DishBasketEntity> Dishes { get; set; } = new();
 }

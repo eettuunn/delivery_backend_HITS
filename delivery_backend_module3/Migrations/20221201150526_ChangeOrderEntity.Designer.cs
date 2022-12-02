@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using delivery_backend_module3.Models;
@@ -11,9 +12,10 @@ using delivery_backend_module3.Models;
 namespace delivery_backend_module3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221201150526_ChangeOrderEntity")]
+    partial class ChangeOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +23,38 @@ namespace delivery_backend_module3.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("delivery_backend_module3.Models.Dtos.DishBasketDto", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("OrderEntityId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("amount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("image")
+                        .HasColumnType("text");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("price")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("totalPrice")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("OrderEntityId");
+
+                    b.ToTable("DishBasketDto");
+                });
 
             modelBuilder.Entity("delivery_backend_module3.Models.Entities.BasketEntity", b =>
                 {
@@ -53,12 +87,6 @@ namespace delivery_backend_module3.Migrations
                     b.Property<Guid>("DishId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("DishStatus")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("OrderEntityId")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
@@ -67,8 +95,6 @@ namespace delivery_backend_module3.Migrations
                     b.HasIndex("BasketEntityId");
 
                     b.HasIndex("DishId");
-
-                    b.HasIndex("OrderEntityId");
 
                     b.HasIndex("UserId");
 
@@ -233,6 +259,13 @@ namespace delivery_backend_module3.Migrations
                     b.ToTable("DishEntityUserEntity");
                 });
 
+            modelBuilder.Entity("delivery_backend_module3.Models.Dtos.DishBasketDto", b =>
+                {
+                    b.HasOne("delivery_backend_module3.Models.Entities.OrderEntity", null)
+                        .WithMany("Dishes")
+                        .HasForeignKey("OrderEntityId");
+                });
+
             modelBuilder.Entity("delivery_backend_module3.Models.Entities.BasketEntity", b =>
                 {
                     b.HasOne("delivery_backend_module3.Models.Entities.UserEntity", "User")
@@ -255,10 +288,6 @@ namespace delivery_backend_module3.Migrations
                         .HasForeignKey("DishId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("delivery_backend_module3.Models.Entities.OrderEntity", null)
-                        .WithMany("Dishes")
-                        .HasForeignKey("OrderEntityId");
 
                     b.HasOne("delivery_backend_module3.Models.Entities.UserEntity", "User")
                         .WithMany()

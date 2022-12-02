@@ -14,6 +14,15 @@ public class OrderController : ControllerBase
         _orderService = orderService;
     }
     
+    [HttpGet]
+    [Route("{id}")]
+    [Authorize]
+    [Authorize(Policy = "ValidateAuthorization")]
+    public async Task<OrderDto> GetOrderInfo(Guid id)
+    {
+        return await _orderService.GetOrderInfo(id, User.Identity.Name);
+    }
+    
     [HttpPost]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]

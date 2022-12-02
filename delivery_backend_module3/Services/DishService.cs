@@ -207,7 +207,7 @@ public class DishService : IDishService
 
     }
 
-    private bool CheckDishInOrders(List<OrderEntity> orders, Guid dishId)
+    /*private bool CheckDishInOrders(List<OrderEntity> orders, Guid dishId)
     {
         foreach (var order in orders)
         {
@@ -217,7 +217,7 @@ public class DishService : IDishService
             }
         }
         return false;
-    }
+    }*/
     
     private async Task<DishDto> GetMovieElementDto(DishEntity dishEntity)
     {

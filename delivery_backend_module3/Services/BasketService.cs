@@ -2,6 +2,7 @@
 using delivery_backend_module3.Models;
 using delivery_backend_module3.Models.Dtos;
 using delivery_backend_module3.Models.Entities;
+using delivery_backend_module3.Models.Enums;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,7 +28,7 @@ public class BasketService : IBasketService
             .FirstOrDefaultAsync() ?? throw new NotFoundException("Cant find dish with this ID");
         DishBasketEntity? dishBasketEntity = await _context
             .DishesInBasket
-            .Where(x => x.User == user && x.Dish == dish)
+            .Where(x => x.User == user && x.Dish == dish && x.DishStatus == DishBasketStatus.InBasket)
             .FirstOrDefaultAsync();
         
         
@@ -35,10 +36,11 @@ public class BasketService : IBasketService
         {
             dishBasketEntity = new DishBasketEntity
             {
-                Id = dishId,
+                Id = new Guid(),
                 Dish = dish,
                 User = user,
-                Amount = 1
+                Amount = 1,
+                DishStatus = DishBasketStatus.InBasket
             };
             await _context.DishesInBasket.AddAsync(dishBasketEntity);
         }
@@ -56,7 +58,7 @@ public class BasketService : IBasketService
             .DishesInBasket
             .Include(x => x.User)
             .Include(x => x.Dish)
-            .Where(x => x.User.Email == email)
+            .Where(x => x.User.Email == email && x.DishStatus == DishBasketStatus.InBasket)
             .ToListAsync();
 
         var dishBasketDtos = new List<DishBasketDto>();
@@ -65,7 +67,7 @@ public class BasketService : IBasketService
         {
             DishBasketDto dishBasketDto = new DishBasketDto()
             {
-                id = dish.Id,
+                id = dish.Dish.Id,
                 name = dish.Dish.Name,
                 price = dish.Dish.Price,
                 amount = dish.Amount,
@@ -84,7 +86,7 @@ public class BasketService : IBasketService
         
         DishBasketEntity dishBasketEntity = await _context
             .DishesInBasket
-            .Where(x => x.Dish.Id == dishId)
+            .Where(x => x.Dish.Id == dishId && x.DishStatus == DishBasketStatus.InBasket)
             .FirstOrDefaultAsync() ?? throw new NotFoundException("Cant find dish with this id in basket");
 
         if (increase == true)

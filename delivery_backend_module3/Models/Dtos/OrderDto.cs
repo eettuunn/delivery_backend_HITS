@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using delivery_backend_module3.Models.Entities;
 using delivery_backend_module3.Models.Enums;
 
 namespace delivery_backend_module3.Models.Dtos;
@@ -19,7 +20,7 @@ public class OrderDto
     [Required]
     public double price { get; set; }
 
-    public List<DishDto> dishes { get; set; } = new();
+    public List<DishBasketDto> dishes { get; set; } = new();
     
     [Required]
     [MinLength(1)]

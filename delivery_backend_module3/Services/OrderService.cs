@@ -28,7 +28,7 @@ public class OrderService : IOrderService
             .DishesInBasket
             .Include(x => x.User)
             .Include(x => x.Dish)
-            .Where(x => x.User.Email == email)
+            .Where(x => x.User.Email == email && x.DishStatus == DishBasketStatus.InBasket)
             .ToListAsync();
         if (dishesInBasket.Count == 0)
         {
@@ -49,13 +49,13 @@ public class OrderService : IOrderService
             Status = OrderStatus.InProcess,
             Price = 0,
             User = user,
-            DishesInBasket = dishesInBasket
+            Dishes = dishesInBasket
         };
         
         foreach (var dishBasketEntity in dishesInBasket)
         {
+            dishBasketEntity.DishStatus = DishBasketStatus.InOrder;
             orderEntity.Price += dishBasketEntity.Dish.Price * dishBasketEntity.Amount;
-            _context.DishesInBasket.Remove(dishBasketEntity);
         }
 
         await _context.AddAsync(orderEntity);
@@ -82,5 +82,54 @@ public class OrderService : IOrderService
 
         orderEntity.Status = OrderStatus.Delivered;
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<OrderDto> GetOrderInfo(Guid orderId, string email)
+    {
+        var dishesInBasket = await _context
+            .Dishes
+            .ToListAsync();
+        var orderEntity = await _context
+            .Orders
+            .Where(order => order.Id == orderId)
+            .Include(order => order.User)
+            .Include(order => order.Dishes)
+            .FirstOrDefaultAsync();
+
+        if (orderEntity == null)
+        {
+            throw new NotFoundException("Cant find order with this ID");
+        }
+
+        if (orderEntity.User.Email != email)
+        {
+            throw new ForbiddenException("You cannot confirm not your order");
+        }
+        
+        OrderDto orderDto = new OrderDto()
+        {
+            id = orderEntity.Id,
+            deliveryTime = orderEntity.DeliveryTime,
+            orderTime = orderEntity.OrderTime,
+            status = orderEntity.Status,
+            address = orderEntity.Address
+        };
+        
+        foreach (var dish in orderEntity.Dishes)
+        {
+            DishBasketDto dishBasketDto = new DishBasketDto()
+            {
+                id = dish.Id,
+                name = dish.Dish.Name,
+                price = dish.Dish.Price,
+                totalPrice = dish.Dish.Price * dish.Amount,
+                amount = dish.Amount,
+                image = dish.Dish.Image
+            };
+            orderDto.price += dishBasketDto.totalPrice;
+            orderDto.dishes.Add(dishBasketDto);
+        }
+
+        return orderDto;
     }
 }
