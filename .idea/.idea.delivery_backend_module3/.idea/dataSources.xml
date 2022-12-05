@@ -8,7 +8,7 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/food_delivery_DB</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="test_db@localhost" uuid="41c8d1c0-4232-4509-a9a5-cbeb502ff518">
+    <data-source source="LOCAL" name="test_db@localhost" uuid="f9f5eab5-e587-4d72-8233-1fe5ab3596bc">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
