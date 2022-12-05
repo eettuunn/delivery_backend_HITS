@@ -29,10 +29,10 @@ public class DishService : IDishService
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync();
 
-        if (dish == null)
+        /*if (dish == null)
         {
             throw new NotFoundException("can't find dish with this id");
-        }
+        }*/
 
         DishDto dishDto = new DishDto()
         {

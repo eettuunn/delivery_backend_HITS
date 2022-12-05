@@ -1,4 +1,7 @@
-﻿using delivery_backend_module3.Exceptions;
+﻿using System.ComponentModel;
+using delivery_backend_module3.Exceptions;
+using delivery_backend_module3.Models.Dtos;
+using Newtonsoft.Json;
 
 namespace delivery_backend_module3.Services.ExceptionHandler;
 
@@ -51,6 +54,16 @@ public class ExceptionMiddlewareService
         {
             context.Response.StatusCode = StatusCodes.Status404NotFound;
             await context.Response.WriteAsJsonAsync(new { message = exception.Message });
+        }
+        catch (Exception exception)
+        {
+            Response response = new Response
+            {
+                status = "500",
+                message = exception.Message
+            };
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await context.Response.WriteAsJsonAsync(response);
         }
     }
 }

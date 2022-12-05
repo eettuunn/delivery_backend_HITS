@@ -8,14 +8,14 @@
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9c60fa7b-0470-4ffb-a7b9-2d34767e7648.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9c60fa7b-0470-4ffb-a7b9-2d34767e7648/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9c60fa7b-0470-4ffb-a7b9-2d34767e7648/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9c60fa7b-0470-4ffb-a7b9-2d34767e7648/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/9c60fa7b-0470-4ffb-a7b9-2d34767e7648/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,7 @@
       <workItem from="1669603731756" duration="174000" />
       <workItem from="1669622865693" duration="22417000" />
       <workItem from="1670231819021" duration="4527000" />
+      <workItem from="1670244989347" duration="2138000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1668757239834</created>
@@ -202,6 +203,7 @@
     <MESSAGE value="GET корзина пользователя" />
     <MESSAGE value="POST создание заказа" />
     <MESSAGE value="GET информация о конкретном заказе" />
-    <option name="LAST_COMMIT_MESSAGE" value="GET информация о конкретном заказе" />
+    <MESSAGE value="Добавил блюда в БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил блюда в БД" />
   </component>
 </project>
