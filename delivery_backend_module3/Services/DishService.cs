@@ -127,6 +127,9 @@ public class DishService : IDishService
 
     public async Task<DishPagedListDto> GetDishesList(HttpContext httpContext)
     {
+        Console.WriteLine(httpContext.Request.QueryString);
+        Console.WriteLine("/////////////////////////////////////////////////////////");
+        
         var query = httpContext.Request.Query;
         int page = 1;
         bool? vegetarian = false;
@@ -242,6 +245,7 @@ public class DishService : IDishService
         bool sortingFlag = false;
         foreach (var param in query)
         {
+            Console.WriteLine(param);
             if (param.Key != "page" && param.Key != "vegetarian" && param.Key != "sorting" && param.Key != "categories")
             {
                 throw new BadRequestException("One of query parameter name is incorrect");
@@ -272,10 +276,6 @@ public class DishService : IDishService
 
             if (param.Key == "categories")
             {
-                if(!Enum.IsDefined(typeof(DishCategory), param.Value.ToString()))
-                {
-                    throw new BadRequestException("Incorrect categories value");
-                }
                 string categoriesStr = param.Value.ToString();
                 categoriesStr.Replace("[", "");
                 categoriesStr.Replace("\"", "");
@@ -283,9 +283,14 @@ public class DishService : IDishService
                 List<string> splittedString = categoriesStr.Split(',').ToList();
                 foreach (var categorie in splittedString)
                 {
+                    if(!Enum.IsDefined(typeof(DishCategory), categorie))
+                    {
+                        throw new BadRequestException("Incorrect categories value");
+                    }
                     categories.Add((DishCategory)Enum.Parse(typeof(DishCategory), categorie));
                 }
             }
+
         }
 
         if (!vegetarianFlag)

@@ -1,4 +1,6 @@
 ﻿using delivery_backend_module3.Models.Dtos;
+using delivery_backend_module3.Models.Enums;
+using delivery_backend_module3.Services;
 using delivery_backend_module3.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +18,7 @@ public class DishController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<DishPagedListDto> GetDishesList()
+    public async Task<DishPagedListDto> GetDishesList(List<DishCategory> categories, bool vegetarian, DishSorting sorting, int page)
     {
         return await _dishService.GetDishesList(HttpContext);
     }

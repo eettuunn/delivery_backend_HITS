@@ -15,6 +15,9 @@ public class BasketController : ControllerBase
         _basketService = basketService;
     }
     
+    /// <summary>
+    /// Get users basket
+    /// </summary>
     [HttpGet]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]

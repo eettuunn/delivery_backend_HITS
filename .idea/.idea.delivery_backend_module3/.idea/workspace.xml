@@ -7,15 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/41c8d1c0-4232-4509-a9a5-cbeb502ff518/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/f9f5eab5-e587-4d72-8233-1fe5ab3596bc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/f9f5eab5-e587-4d72-8233-1fe5ab3596bc/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/f9f5eab5-e587-4d72-8233-1fe5ab3596bc/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/f9f5eab5-e587-4d72-8233-1fe5ab3596bc/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/f9f5eab5-e587-4d72-8233-1fe5ab3596bc/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/delivery_backend_module3.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63ee384769844530bc73c5391d8c6ee014270/26/82d2985e/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f8322aa6874942e08bfeaa226363380c16c70/50/b49da343/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/15b2f48e6df3dad7cdde811d4842ab7079168ec83724b7b1d74f5cdf9d45/JsonStringEnumConverter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
