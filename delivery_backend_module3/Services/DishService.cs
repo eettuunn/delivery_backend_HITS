@@ -66,6 +66,8 @@ public class DishService : IDishService
 
         var checkRating = await _context
             .Ratings
+            .Include(x => x.user)
+            .Include(x => x.dish)
             .Where(x => x.dish.Id == dishId && x.user.Id == userEntity.Id)
             .FirstOrDefaultAsync();
 
@@ -75,17 +77,21 @@ public class DishService : IDishService
         }
 
         //TODO: вернуть когда сделаешь заказ
-        /*var userOrders = await _context
+        var userOrders = await _context
             .Orders
-            .Include(x => x.DishesInBasket)
+            .Include(x => x.Dishes)
+            .Include(x => x.User)
             .Where(x => x.User.Id == userEntity.Id && x.Status == OrderStatus.Delivered)
-            .ToListAsync();
+            .ToListAsync() ?? throw new BadRequestException("User can't set rating on dish that wasn't ordered");
         
-        
-        if (!CheckDishInOrders(userOrders, dishId))
+        /*Console.WriteLine(userOrders);
+        Console.WriteLine("////////////////////////////////");*/
+
+        bool dishInOrder = await CheckDishInOrders(userOrders, dishId);
+        if (!dishInOrder)
         {
             throw new BadRequestException("User can't set rating on dish that wasn't ordered");
-        }*/
+        }
         
         return true;
     }
@@ -210,17 +216,31 @@ public class DishService : IDishService
 
     }
 
-    /*private bool CheckDishInOrders(List<OrderEntity> orders, Guid dishId)
+    private async Task<bool> CheckDishInOrders(List<OrderEntity> orders, Guid dishId)
     {
+        var dishesInBasket = await _context
+            .DishesInBasket
+            .Include(x => x.Dish)
+            .ToListAsync();
         foreach (var order in orders)
         {
-            if (order.DishesInBasket.Exists(x => x.Dish.Id == dishId))
+            foreach (var dish in order.Dishes)
+            {
+                Console.WriteLine("?///////////////////////////////");
+                Console.WriteLine(dish.Dish);
+                Console.WriteLine("?///////////////////////////////");
+                if (dish.Dish.Id == dishId)
+                {
+                    return true;
+                }
+            }
+            /*if (order.Dishes.Exists(x => x.Dish.Id == dishId))
             {
                 return true;
-            }
+            }*/
         }
         return false;
-    }*/
+    }
     
     private async Task<DishDto> GetMovieElementDto(DishEntity dishEntity)
     {

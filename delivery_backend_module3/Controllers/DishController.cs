@@ -17,12 +17,18 @@ public class DishController : ControllerBase
         _dishService = dishService;
     }
 
+    /// <summary>
+    /// Get list of dishes with parameters
+    /// </summary>
     [HttpGet]
     public async Task<DishPagedListDto> GetDishesList(List<DishCategory> categories, bool vegetarian, DishSorting sorting, int page)
     {
         return await _dishService.GetDishesList(HttpContext);
     }
 
+    /// <summary>
+    /// Get information about dish
+    /// </summary>
     [HttpGet]
     [Route("{id}")]
     public async Task<DishDto> GetDishDetails(Guid id)
@@ -30,6 +36,9 @@ public class DishController : ControllerBase
         return await _dishService.GetDishDetails(id);
     }
 
+    /// <summary>
+    /// Check ability to rating a dish
+    /// </summary>
     [HttpGet]
     [Route("{id}/rating/check")]
     [Authorize]
@@ -39,6 +48,9 @@ public class DishController : ControllerBase
         return await _dishService.CheckAbilityToRating(id, User.Identity.Name);
     }
 
+    /// <summary>
+    /// Post review for a dish
+    /// </summary>
     [HttpPost]
     [Route("{id}/rating")]
     [Authorize]

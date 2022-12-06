@@ -28,6 +28,8 @@ public class BasketService : IBasketService
             .FirstOrDefaultAsync() ?? throw new NotFoundException("Cant find dish with this ID");
         DishBasketEntity? dishBasketEntity = await _context
             .DishesInBasket
+            .Include(x => x.User)
+            .Include(x => x.Dish)
             .Where(x => x.User == user && x.Dish == dish && x.DishStatus == DishBasketStatus.InBasket)
             .FirstOrDefaultAsync();
         

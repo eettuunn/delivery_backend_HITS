@@ -25,7 +25,10 @@ public class BasketController : ControllerBase
     {
         return await _basketService.GetUsersBasket(User.Identity.Name);
     }
-
+    
+    /// <summary>
+    /// Add dish to basket
+    /// </summary>
     [HttpPost]
     [Route("dish/{dishId}")]
     [Authorize]
@@ -35,6 +38,9 @@ public class BasketController : ControllerBase
         await _basketService.AddDishToBasket(dishId, User.Identity.Name);
     }
 
+    /// <summary>
+    /// Delete dish from basket
+    /// </summary>
     [HttpDelete]
     [Route("dish/{dishId}")]
     [Authorize]

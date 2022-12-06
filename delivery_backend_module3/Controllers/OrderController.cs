@@ -22,6 +22,9 @@ public class OrderController : ControllerBase
         return await _orderService.GetOrderList(User.Identity.Name);
     }
     
+    /// <summary>
+    /// Get information about order
+    /// </summary>
     [HttpGet]
     [Route("{id}")]
     [Authorize]
@@ -31,6 +34,9 @@ public class OrderController : ControllerBase
         return await _orderService.GetOrderInfo(id, User.Identity.Name);
     }
     
+    /// <summary>
+    /// Create new order
+    /// </summary>
     [HttpPost]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]
@@ -39,6 +45,9 @@ public class OrderController : ControllerBase
         await _orderService.CreateOrder(orderCreateDto, User.Identity.Name);
     }
     
+    /// <summary>
+    /// Confirm delivery of order
+    /// </summary>
     [HttpPost]
     [Authorize]
     [Route("{id}/status")]

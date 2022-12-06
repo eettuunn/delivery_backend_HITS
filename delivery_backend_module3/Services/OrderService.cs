@@ -119,7 +119,7 @@ public class OrderService : IOrderService
         {
             DishBasketDto dishBasketDto = new DishBasketDto()
             {
-                id = dish.Id,
+                id = dish.Dish.Id,
                 name = dish.Dish.Name,
                 price = dish.Dish.Price,
                 totalPrice = dish.Dish.Price * dish.Amount,

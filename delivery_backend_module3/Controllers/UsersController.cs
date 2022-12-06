@@ -15,6 +15,9 @@ public class UsersController : ControllerBase
         _usersService = usersService;
     }
     
+    /// <summary>
+    /// Register new user
+    /// </summary>
     [HttpPost]
     [Route("register")]
     public async Task<TokenDto> RegisterUser([FromBody] UserRegisterModel userRegisterDto)
@@ -22,6 +25,9 @@ public class UsersController : ControllerBase
         return await _usersService.RegisterUser(userRegisterDto);
     }
     
+    /// <summary>
+    /// Login user
+    /// </summary>
     [HttpPost]
     [Route("login")]
     public async Task<TokenDto> LoginUser([FromBody] LoginCredentials loginCredentials)
@@ -29,6 +35,9 @@ public class UsersController : ControllerBase
         return await _usersService.LoginUser(loginCredentials);
     }
 
+    /// <summary>
+    /// Logout user
+    /// </summary>
     [HttpPost]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]
@@ -38,6 +47,9 @@ public class UsersController : ControllerBase
         return await _usersService.LogoutUser(HttpContext);
     }
 
+    /// <summary>
+    /// Get information about user's profile
+    /// </summary>
     [HttpGet]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]
@@ -47,6 +59,9 @@ public class UsersController : ControllerBase
         return await _usersService.GetProfile(User.Identity.Name);
     }
     
+    /// <summary>
+    /// Edit user's profile
+    /// </summary>
     [HttpPut]
     [Route("profile")]
     [Authorize]
