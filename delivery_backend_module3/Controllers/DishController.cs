@@ -55,7 +55,7 @@ public class DishController : ControllerBase
     [Route("{id}/rating")]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]
-    public async Task PostDishReview(Guid id, int rating)
+    public async Task PostDishReview(Guid id, double? rating)
     {
         await _dishService.PostDishRating(id, rating, User.Identity.Name);
     }

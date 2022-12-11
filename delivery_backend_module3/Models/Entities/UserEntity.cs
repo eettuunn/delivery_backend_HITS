@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using delivery_backend_module3.Exceptions;
 using delivery_backend_module3.Models.Enums;
 
 namespace delivery_backend_module3.Models.Entities;
@@ -12,7 +13,7 @@ public class UserEntity
     public string FullName { get; set; }
     
     [Required]
-    [MinLength(6)]
+    [StringLength(30, MinimumLength = 6, ErrorMessage = "Password must be minimum 6 characters")]
     public string Password { get; set; }
     
     public DateTime BirthDate { get; set; }

@@ -44,12 +44,20 @@ public class AuthorizationRequirementHandler : AuthorizationHandler<Authorizatio
 
             context.Succeed(requirement);
         }
+        else
+        {
+            throw new BadRequestException("Bad request");
+        }
     }
     
-    private static string GetToken(string authorizationString)
+    private static string GetToken(string? authorizationString)
     {
         const string pattern = @"\S+\.\S+\.\S+";
         var regex = new Regex(pattern);
+        if (authorizationString == null)
+        {
+            throw new NotAuthorizedException("Not authorized");
+        }
         var matches = regex.Matches(authorizationString);
 
         if (matches.Count <= 0)

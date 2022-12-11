@@ -18,7 +18,7 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="test_db@localhost" uuid="c6fc1d4e-b80a-4846-ae21-49d6da2a6a77">
+    <data-source name="test_db@localhost" uuid="5cb96edf-1b37-4418-9b2e-000d4476ab5c">
       <database-info product="PostgreSQL" version="15.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="15.0" exact-driver-version="42.5">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

@@ -8,7 +8,7 @@ public interface IDishService
 
     Task<bool> CheckAbilityToRating(Guid id, string email);
 
-    Task PostDishRating(Guid id, int rating, string email);
+    Task PostDishRating(Guid id, double? rating, string email);
 
     Task<DishPagedListDto> GetDishesList(HttpContext httpContext);
 }

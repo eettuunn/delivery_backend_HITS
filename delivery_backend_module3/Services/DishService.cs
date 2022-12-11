@@ -27,12 +27,7 @@ public class DishService : IDishService
         var dish = await _context
             .Dishes
             .Where(x => x.Id == id)
-            .FirstOrDefaultAsync();
-
-        /*if (dish == null)
-        {
-            throw new NotFoundException("can't find dish with this id");
-        }*/
+            .FirstOrDefaultAsync() ?? throw new NotFoundException("can't find dish with this id"); ;
 
         DishDto dishDto = new DishDto()
         {
@@ -73,33 +68,31 @@ public class DishService : IDishService
 
         if (checkRating != null)
         {
-            throw new BadRequestException("User has already rated this dish");
+            return false;
         }
-
-        //TODO: вернуть когда сделаешь заказ
+        
         var userOrders = await _context
             .Orders
             .Include(x => x.Dishes)
             .Include(x => x.User)
             .Where(x => x.User.Id == userEntity.Id && x.Status == OrderStatus.Delivered)
-            .ToListAsync() ?? throw new BadRequestException("User can't set rating on dish that wasn't ordered");
-        
-        /*Console.WriteLine(userOrders);
-        Console.WriteLine("////////////////////////////////");*/
+            .ToListAsync();
 
         bool dishInOrder = await CheckDishInOrders(userOrders, dishId);
         if (!dishInOrder)
         {
-            throw new BadRequestException("User can't set rating on dish that wasn't ordered");
+            return false;
         }
         
         return true;
     }
 
-    public async Task PostDishRating(Guid dishId, int rating, string email)
+    public async Task PostDishRating(Guid dishId, double? rating, string email)
     {
         if (await CheckAbilityToRating(dishId, email))
         {
+            CheckRating(rating);
+            
             var userEntity = await _context
                 .Users
                 .Where(x => x.Email == email)
@@ -113,13 +106,13 @@ public class DishService : IDishService
             {
                 throw new NotFoundException("Can't find dish with this ID");
             }
-            
+
             var ratingEntity = new RatingEntity
             {
                 Id = new Guid(),
                 dish = dishEntity,
                 user = userEntity,
-                rating = rating
+                rating = Convert.ToInt32(rating)
             };
 
             await _context.Ratings.AddAsync(ratingEntity);
@@ -133,40 +126,42 @@ public class DishService : IDishService
 
     public async Task<DishPagedListDto> GetDishesList(HttpContext httpContext)
     {
-        Console.WriteLine(httpContext.Request.QueryString);
-        Console.WriteLine("/////////////////////////////////////////////////////////");
-        
         var query = httpContext.Request.Query;
         int page = 1;
         bool? vegetarian = false;
         DishSorting? sorting = DishSorting.NameAsc;
         List<DishCategory> categories = new();
         ParseQuery(query, ref page, ref vegetarian, ref sorting, ref categories);
-
+        
+        
         var maxDishesCount = _configuration.GetValue<double>("PageSize");
         var dishCountInDb = _context.Dishes.Count();
         var dishesSkip = (int)((page - 1) * maxDishesCount);
         var takeCount = (int)Math.Min(dishCountInDb - (page - 1) * maxDishesCount, maxDishesCount);
-        var pageCount = (int)Math.Ceiling(dishCountInDb / maxDishesCount);
-        pageCount = pageCount == 0 ? 1 : pageCount;
-        if (page > pageCount || page < 1)
-        {
-            throw new BadRequestException("Incorrect current page");
-        }
-        
+
+        //TODO: vegetarian
         var dishEntities = await _context
             .Dishes
-            .Where(x => vegetarian == null || x.Vegetarian == vegetarian)
+            .Where(x => vegetarian == false || x.Vegetarian == vegetarian)
             .Where(x => categories.Count == 0 || categories.Contains(x.Category))
-            .Skip(dishesSkip)
-            .Take(takeCount)
             .ToListAsync();
-
         if (sorting != null)
         {
             SortDishes(ref dishEntities, sorting);
         }
         
+        var pageCount = (int)Math.Ceiling(dishEntities.Count / maxDishesCount);
+        pageCount = pageCount == 0 ? 1 : pageCount;
+        dishEntities = dishEntities
+            .Skip(dishesSkip)
+            .Take(takeCount)
+            .ToList();
+        
+        if (page > pageCount || page < 1)
+        {
+            throw new BadRequestException("Incorrect current page");
+        }
+
         var pageInfo = new PageInfoModel
         {
             current = page,
@@ -178,7 +173,7 @@ public class DishService : IDishService
 
         foreach (var dish in dishEntities)
         {
-            dishDtos.Add(await GetMovieElementDto(dish));
+            dishDtos.Add(await GetDishDetails(dish));
         }
 
         var result = new DishPagedListDto()
@@ -242,9 +237,9 @@ public class DishService : IDishService
         return false;
     }
     
-    private async Task<DishDto> GetMovieElementDto(DishEntity dishEntity)
+    private async Task<DishDto> GetDishDetails(DishEntity dishEntity)
     {
-        var movieElementDto = new DishDto
+        var dishDto = new DishDto
         {
             id = dishEntity.Id,
             name = dishEntity.Name,
@@ -256,7 +251,7 @@ public class DishService : IDishService
             rating = await GetDishRating(dishEntity)
         };
 
-        return movieElementDto;
+        return dishDto;
     }
 
     private void ParseQuery(IQueryCollection query, ref int page, ref bool? vegetarian, ref DishSorting? sorting, ref List<DishCategory> categories)
@@ -265,13 +260,16 @@ public class DishService : IDishService
         bool sortingFlag = false;
         foreach (var param in query)
         {
-            Console.WriteLine(param);
             if (param.Key != "page" && param.Key != "vegetarian" && param.Key != "sorting" && param.Key != "categories")
             {
                 throw new BadRequestException("One of query parameter name is incorrect");
             }
             if (param.Key == "page")
             {
+                if (param.Value == "")
+                {
+                    throw new BadRequestException("value for query param 'page' can't be empty string");
+                }
                 page = Int32.Parse(param.Value);
             }
             if (param.Key == "vegetarian")
@@ -307,6 +305,8 @@ public class DishService : IDishService
                     {
                         throw new BadRequestException("Incorrect categories value");
                     }
+                    Console.WriteLine(categorie);
+                    Console.WriteLine("SDAASDASDASDASDASDA");
                     categories.Add((DishCategory)Enum.Parse(typeof(DishCategory), categorie));
                 }
             }
@@ -315,7 +315,7 @@ public class DishService : IDishService
 
         if (!vegetarianFlag)
         {
-            vegetarian = null;
+            vegetarian = false;
         }
 
         if (!sortingFlag)
@@ -345,13 +345,24 @@ public class DishService : IDishService
         {
             dishEntities = dishEntities.OrderByDescending(x => x.Price).ToList();
         }
-        //TODO: rating null sorting
+
         if (sorting == DishSorting.RatingAsc)
         {
-            dishEntities.Sort((x1, x2) =>
+            var dishesWithRating = dishEntities
+                .OrderBy(x => GetDishRating(x).Result)
+                .Where(x => GetDishRating(x).Result != null)
+                .ToList();
+            var dishesWithoutRating = dishEntities
+                .Where(x => GetDishRating(x).Result == null)
+                .ToList();
+            
+            dishesWithRating.AddRange(dishesWithoutRating);
+            dishEntities = dishesWithRating;
+            /*dishEntities.Sort((x1, x2) =>
             {
                 var x1Rating = GetDishRating(x1).Result;
                 var x2Rating = GetDishRating(x2).Result;
+                return x1Rating.ToString().CompareTo(x2Rating.ToString());
                 if (x2Rating == null)
                 {
                     return -1;
@@ -362,26 +373,24 @@ public class DishService : IDishService
                 }
 
                 return 1;
-            });
+            });*/
         }
 
         if (sorting == DishSorting.RatingDesc)
         {
-            dishEntities.Sort((x1, x2) =>
-            {
-                var x1Rating = GetDishRating(x1).Result;
-                var x2Rating = GetDishRating(x2).Result;
-                if (x2Rating == null)
-                {
-                    return -1;
-                }
-                if (x1Rating < x2Rating)
-                {
-                    return 1;
-                }
+            dishEntities = dishEntities.OrderByDescending(x => GetDishRating(x).Result).ToList();
+        }
+    }
 
-                return -1;
-            });
+    private void CheckRating(double? rating)
+    {
+        if (rating < 0 || rating > 10)
+        {
+            throw new BadRequestException("Rating must be from 0 to 10");
+        }
+        if (rating % 1 != 0 || rating == null)
+        {
+            throw new BadRequestException("Rating must be integer");
         }
     }
 }

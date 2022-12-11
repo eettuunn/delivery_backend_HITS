@@ -40,9 +40,16 @@ public class UsersService : IUsersService
             PhoneNumber = userRegisterDto.phoneNumber
         };
 
-        await _context.Users.AddAsync(userEntity);
-        await _context.SaveChangesAsync();
-        
+        try
+        {
+            await _context.Users.AddAsync(userEntity);
+            await _context.SaveChangesAsync();
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+
         var loginCredentials = new LoginCredentials
         {
             password = userEntity.Password,
@@ -54,6 +61,10 @@ public class UsersService : IUsersService
 
     public async Task<TokenDto> LoginUser(LoginCredentials loginCredentials)
     {
+        if (loginCredentials.email == null || loginCredentials.password == null)
+        {
+            throw new BadRequestException("Incorrect request body");
+        }
         loginCredentials.email = NormalizeAttribute(loginCredentials.email);
 
         var identity = await GetIdentity(loginCredentials.email, loginCredentials.password);
@@ -135,11 +146,11 @@ public class UsersService : IUsersService
         
         CheckPutValidation(editedUserDto);
         
-        userEntity.Address = editedUserDto.address;
-        userEntity.FullName = editedUserDto.fullName;
-        userEntity.PhoneNumber = editedUserDto.phoneNumber;
-        userEntity.Gender = editedUserDto.gender;
-        userEntity.BirthDate = editedUserDto.birthDate;
+        userEntity.Address = editedUserDto.address == null ? userEntity.Address : editedUserDto.address;
+        userEntity.FullName = editedUserDto.fullName == null ? userEntity.FullName : editedUserDto.fullName;
+        userEntity.PhoneNumber = editedUserDto.phoneNumber == null ? userEntity.PhoneNumber : editedUserDto.phoneNumber;
+        userEntity.Gender = editedUserDto.gender == null ? userEntity.Gender : editedUserDto.gender;
+        userEntity.BirthDate = editedUserDto.birthDate == null ? userEntity.BirthDate : editedUserDto.birthDate;
 
         
         await _context.SaveChangesAsync(); 
@@ -177,6 +188,10 @@ public class UsersService : IUsersService
     
     private async Task CheckRegisterValidation(UserRegisterModel userRegisterDto)
     {
+        if (userRegisterDto.password.Length < 6)
+        {
+            throw new BadRequestException("Password must be more, then 5 characters");
+        }
         var emailRegex = new Regex(@"[a-zA-Z]+\w*@[a-zA-Z]+\.[a-zA-Z]+");
         var emailMatches = emailRegex.Matches(userRegisterDto.email);
         if (emailMatches.Count <= 0)

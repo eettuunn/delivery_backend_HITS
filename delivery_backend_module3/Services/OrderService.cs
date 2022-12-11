@@ -81,6 +81,7 @@ public class OrderService : IOrderService
         }
 
         orderEntity.Status = OrderStatus.Delivered;
+        orderEntity.DeliveryTime = DateTime.UtcNow;
         await _context.SaveChangesAsync();
     }
 
