@@ -93,7 +93,7 @@ builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-//builder.Services.AddHostedService<TokenCleaner>();
+builder.Services.AddHostedService<TokenCleaner>();
 builder.Services.AddSingleton<IAuthorizationHandler, AuthorizationRequirementHandler>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization(options =>
