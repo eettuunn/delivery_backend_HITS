@@ -14,10 +14,13 @@ public class OrderController : ControllerBase
         _orderService = orderService;
     }
     
+    /// <summary>
+    /// Get list of user's orders
+    /// </summary>
     [HttpGet]
     [Authorize]
     [Authorize(Policy = "ValidateAuthorization")]
-    public async Task<List<OrderInfoDto>> GetOrderList(Guid id)
+    public async Task<List<OrderInfoDto>> GetOrderList()
     {
         return await _orderService.GetOrderList(User.Identity.Name);
     }

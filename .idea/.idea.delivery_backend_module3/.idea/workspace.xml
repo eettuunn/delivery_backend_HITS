@@ -5,28 +5,17 @@
     <projectFile profileName="delivery_backend_module3">delivery_backend_module3/delivery_backend_module3.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="Добавил описание для всех эндпоиинтов">
+    <list default="true" id="7d7f078d-71e3-48ef-bb36-ee49b20d2efe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c6fc1d4e-b80a-4846-ae21-49d6da2a6a77.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/c6fc1d4e-b80a-4846-ae21-49d6da2a6a77.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/ece44f91-bd8e-47b2-8e83-8e69c2ee6d6c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/ece44f91-bd8e-47b2-8e83-8e69c2ee6d6c/storage_v2/_src_/database/test_db.Sws3qw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/ece44f91-bd8e-47b2-8e83-8e69c2ee6d6c/storage_v2/_src_/database/test_db.Sws3qw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/ece44f91-bd8e-47b2-8e83-8e69c2ee6d6c/storage_v2/_src_/database/test_db.Sws3qw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/ece44f91-bd8e-47b2-8e83-8e69c2ee6d6c/storage_v2/_src_/database/test_db.Sws3qw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/0d34dbce-07c6-446c-b832-881888593dc8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5cb96edf-1b37-4418-9b2e-000d4476ab5c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/dataSources/5cb96edf-1b37-4418-9b2e-000d4476ab5c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.delivery_backend_module3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/DishController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/EditUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/EditUserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/OrderCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Dtos/OrderCreateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Models/Entities/UserEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Controllers/OrderController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/AuthorizationPolicy/AuthorizationRequirementHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/AuthorizationPolicy/AuthorizationRequirementHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/DishService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IDishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/Interfaces/IDishService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/UsersService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/Services/ExceptionHandler/ExceptionMiddlewareService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_backend_module3/SwaggerDocumentFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_backend_module3/SwaggerDocumentFilter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Task_#16169/TokenCleaner" />
       </map>
     </option>
   </component>
@@ -46,6 +35,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/15b2f48e6df3dad7cdde811d4842ab7079168ec83724b7b1d74f5cdf9d45/JsonStringEnumConverter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3839fc8fee5ae62538a4469ed86bbba1ccd15d4e0da63bba779abe1719da3/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Controllers/BasketController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/prog/web/delivery_backend_module3/delivery_backend_module3/Services/DishService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -178,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670334399478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Время доставки при подтверждении доставки">
+      <created>1670745954365</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670745954365</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Добавил очистку токенов">
+      <created>1670746042250</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670746042250</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +239,8 @@
     <MESSAGE value="Добавил блюда в БД" />
     <MESSAGE value="Enums в сваггере и описание эндпоинтов" />
     <MESSAGE value="Добавил описание для всех эндпоиинтов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил описание для всех эндпоиинтов" />
+    <MESSAGE value="Время доставки при подтверждении доставки" />
+    <MESSAGE value="Добавил очистку токенов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил очистку токенов" />
   </component>
 </project>

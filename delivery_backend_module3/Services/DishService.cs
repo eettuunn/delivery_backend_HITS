@@ -358,22 +358,6 @@ public class DishService : IDishService
             
             dishesWithRating.AddRange(dishesWithoutRating);
             dishEntities = dishesWithRating;
-            /*dishEntities.Sort((x1, x2) =>
-            {
-                var x1Rating = GetDishRating(x1).Result;
-                var x2Rating = GetDishRating(x2).Result;
-                return x1Rating.ToString().CompareTo(x2Rating.ToString());
-                if (x2Rating == null)
-                {
-                    return -1;
-                }
-                if (x1Rating < x2Rating)
-                {
-                    return -1;
-                }
-
-                return 1;
-            });*/
         }
 
         if (sorting == DishSorting.RatingDesc)
