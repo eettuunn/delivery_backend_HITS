@@ -39,7 +39,7 @@ public class BasketController : ControllerBase
     }
 
     /// <summary>
-    /// Delete dish from basket
+    /// Delete dish from basket (increase = false - delete completely, increase = true - delete 1 dish)
     /// </summary>
     [HttpDelete]
     [Route("dish/{dishId}")]

@@ -94,6 +94,10 @@ public class BasketService : IBasketService
         if (increase == true)
         {
             dishBasketEntity.Amount--;
+            if (dishBasketEntity.Amount == 0)
+            {
+                _context.DishesInBasket.Remove(dishBasketEntity);
+            }
         }
         else
         {

@@ -49,7 +49,7 @@ public class DishController : ControllerBase
     }
 
     /// <summary>
-    /// Post review for a dish
+    /// Post rating for a dish
     /// </summary>
     [HttpPost]
     [Route("{id}/rating")]
